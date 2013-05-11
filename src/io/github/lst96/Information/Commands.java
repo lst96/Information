@@ -19,7 +19,7 @@ public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel
 		   Player player = (Player) sender;
    
   if(commandLabel.equalsIgnoreCase("website")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
+	   player.sendMessage(ChatColor.DARK_RED + "[test]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
   }
 
   if(commandLabel.equalsIgnoreCase("donate")){
