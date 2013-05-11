@@ -16,12 +16,12 @@ public class Information extends JavaPlugin {
 	   this.logger.info(pdfFile.getName() + " v" + pdfFile.getVersion() + " is enabled.");
 	   getConfig().options().copyDefaults(true);
 	   saveConfig();
-	   getCommand("website").setExecutor(new Commands(this)); 
-	   getCommand("donate").setExecutor(new Commands(this)); 
-	   getCommand("vote").setExecutor(new Commands(this)); 
-	   getCommand("inforeload").setExecutor(new Commands(this)); 
-	   getCommand("staff").setExecutor(new Commands(this)); 
-	   getCommand("rules").setExecutor(new Commands(this));
+	   getCommand("website").setExecutor(new Website(this)); 
+	   getCommand("donate").setExecutor(new Donate(this)); 
+	   getCommand("vote").setExecutor(new Vote(this)); 
+	   getCommand("inforeload").setExecutor(new Inforeload(this)); 
+	   getCommand("staff").setExecutor(new Staff(this)); 
+	   getCommand("rules").setExecutor(new Rules(this));
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
