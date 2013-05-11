@@ -12,13 +12,34 @@ commands:
   Inforeload:
       description: Reloads Configuration.   
   Staff:
-     description: Displays staff. 
+      description: Displays staff. 
   Rules:
-    description: Displays rules.
+      description: Displays rules.
     
- permissions:
-   information.website:
-   description: Gives permission to website command. 
-   default: op
-     
+permissions:
+    information.*:
+        description: Gives access to all information commands
+        children:
+            information.website: true
+            information.donate: true
+            information.vote: true
+            information.reload: true
+            information.staff: true
+            information.rules: true
+    information.website:
+        description: Allows use of website command
+        default: op
+    information.donate:
+        description: Allows use of donate command
+        default: op
+    information.vote:
+        description: Allows use of vote command
+        default: true
+    information.reload:
+        description: Allows use of inforeload command
+    information.staff:
+        description: Allows use of staff command
+    information.rules:
+        description: Allows use of rules command
+        
     
