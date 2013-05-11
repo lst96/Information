@@ -61,9 +61,13 @@ public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel
   }   
   
   if (commandLabel.equalsIgnoreCase("inforeload")) {
-	  Player player = (Player) sender;
+	  if(sender instanceof Player){
       plugin.reloadConfig();
-      player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+          sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+	  }else{
+		  plugin.reloadConfig();
+		  sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+	  }
     
   return true;
 }
