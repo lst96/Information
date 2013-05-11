@@ -22,7 +22,6 @@ public class Information extends JavaPlugin {
 	   getCommand("inforeload").setExecutor(new Commands(this)); 
 	   getCommand("staff").setExecutor(new Commands(this)); 
 	   getCommand("rules").setExecutor(new Commands(this));
-	   getCommand("HODSUCKS").setExecutor(new Commands(this));
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
