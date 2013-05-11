@@ -24,11 +24,6 @@ public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel
 		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
 		}
 	}
-	
-  if(commandLabel.equalsIgnoreCase("website")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
-  }
 
   if(commandLabel.equalsIgnoreCase("donate")){
 	  Player player = (Player) sender;
