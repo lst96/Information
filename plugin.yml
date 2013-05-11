@@ -1,6 +1,6 @@
 name: Information
-version: 0.2
-author: lst96
+version: 0.3
+authors: lst96, Hodgetts330
 main: io.github.lst96.Information.Information
 commands:
   Website: 
@@ -19,11 +19,11 @@ commands:
       description: Reloads Configuration.
       permission: information.reload
       permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
-  staff:
+  Staff:
      description: Displays staff.
      permission: information.staff
      permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
-  rules:
+  Rules:
     description: Displays rules.
     permission: information.rules
     permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.     
