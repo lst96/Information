@@ -34,12 +34,15 @@ permissions:
         default: op
     information.vote:
         description: Allows use of vote command
-        default: true
+        default: op
     information.reload:
         description: Allows use of inforeload command
+        default: op
     information.staff:
         description: Allows use of staff command
+        default: op
     information.rules:
         description: Allows use of rules command
+        default: op
         
     
