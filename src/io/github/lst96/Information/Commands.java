@@ -16,7 +16,13 @@ public class Commands implements CommandExecutor{
 	
 public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
 	   {
-   
+	
+	if(player.hasPermission("information.website")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	
   if(commandLabel.equalsIgnoreCase("website")){
 	  Player player = (Player) sender;
 	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
