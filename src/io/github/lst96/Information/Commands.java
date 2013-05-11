@@ -16,43 +16,55 @@ public class Commands implements CommandExecutor{
 	
 public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
 	   {
-		   Player player = (Player) sender;
    
   if(commandLabel.equalsIgnoreCase("website")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_GREEN + plugin.getConfig().getString("Website"));
   }
 
   if(commandLabel.equalsIgnoreCase("donate")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_BLUE + plugin.getConfig().getString("Donate"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_BLUE + plugin.getConfig().getString("Donate"));
   }
 
   if(commandLabel.equalsIgnoreCase("vote")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_AQUA + plugin.getConfig().getString("VoteLink1"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_AQUA + plugin.getConfig().getString("VoteLink1"));
   }
 
   if(commandLabel.equalsIgnoreCase("vote")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_PURPLE + plugin.getConfig().getString("VoteLink2"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_PURPLE + plugin.getConfig().getString("VoteLink2"));
   }
 
   if(commandLabel.equalsIgnoreCase("vote")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GOLD + plugin.getConfig().getString("VoteLink3"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GOLD + plugin.getConfig().getString("VoteLink3"));
   }
 
   if(commandLabel.equalsIgnoreCase("vote")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GREEN + plugin.getConfig().getString("VoteLink4"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GREEN + plugin.getConfig().getString("VoteLink4"));
   }
   
   if(commandLabel.equalsIgnoreCase("staff")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.YELLOW + plugin.getConfig().getString("Staff"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.YELLOW + plugin.getConfig().getString("Staff"));
   }
 
   if(commandLabel.equalsIgnoreCase("rules")){
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("Rules"));
+	  Player player = (Player) sender;
+	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("Rules"));
   }
 
   if(commandLabel.equalsIgnoreCase("inforeload")){
+	  if(sender instanceof Player){
+		 plugin.reloadConfig();
+		 sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+	  }else{
 	   plugin.reloadConfig();
-	   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+	   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+	  }
 	   
   return true;
 	   }
