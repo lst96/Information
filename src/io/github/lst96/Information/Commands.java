@@ -12,6 +12,7 @@ public class Commands implements CommandExecutor{
 	 
     public Commands(Information instance) {
         this.plugin = instance;
+        
     }
 	
 public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
@@ -24,56 +25,85 @@ public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel
 		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
 		}
 	}
+		
+	if(commandLabel.equalsIgnoreCase("donate")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.donate")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_BLUE + plugin.getConfig().getString("Donate"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
 
-  if(commandLabel.equalsIgnoreCase("donate")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_BLUE + plugin.getConfig().getString("Donate"));
-  }
+	if(commandLabel.equalsIgnoreCase("vote")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.vote")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_AQUA + plugin.getConfig().getString("VoteLink1"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
 
-  if(commandLabel.equalsIgnoreCase("vote")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_AQUA + plugin.getConfig().getString("VoteLink1"));
-  }
+	if(commandLabel.equalsIgnoreCase("vote")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.vote")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_PURPLE + plugin.getConfig().getString("VoteLink2"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
 
-  if(commandLabel.equalsIgnoreCase("vote")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_PURPLE + plugin.getConfig().getString("VoteLink2"));
-  }
-
-  if(commandLabel.equalsIgnoreCase("vote")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GOLD + plugin.getConfig().getString("VoteLink3"));
-  }
-
-  if(commandLabel.equalsIgnoreCase("vote")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GREEN + plugin.getConfig().getString("VoteLink4"));
-  }
+	if(commandLabel.equalsIgnoreCase("vote")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.vote")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GOLD + plugin.getConfig().getString("VoteLink3"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
+	
+	if(commandLabel.equalsIgnoreCase("vote")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.vote")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GREEN + plugin.getConfig().getString("VoteLink4"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
   
-  if(commandLabel.equalsIgnoreCase("staff")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.YELLOW + plugin.getConfig().getString("Staff"));
-  }
+	if(commandLabel.equalsIgnoreCase("staff")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.staff")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.YELLOW + plugin.getConfig().getString("Staff"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
+	
+	if(commandLabel.equalsIgnoreCase("rules")){
+		Player player = (Player) sender;
+	if(player.hasPermission("information.rules")) {
+		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("Rules"));
+		}else{
+		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		}
+	}
 
-  if(commandLabel.equalsIgnoreCase("rules")){
-	  Player player = (Player) sender;
-	  player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("Rules"));
-  }   
-  
-  if (commandLabel.equalsIgnoreCase("inforeload")) {
-	  if(sender instanceof Player){
-      plugin.reloadConfig();
-          sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
-	  }else{
-		  plugin.reloadConfig();
-		  sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
-	  }
-    
+	if (commandLabel.equalsIgnoreCase("inforeload")) {
+		  if(sender instanceof Player){
+	      plugin.reloadConfig();
+	          sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+		  }else{
+			  plugin.reloadConfig();
+			  sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.RED + " Configuration Reloaded!");
+		  }
   return true;
 }
 return false;
 	   }
 }
+	   
+	 
 
   
   

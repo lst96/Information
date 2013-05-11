@@ -5,7 +5,7 @@ main: io.github.lst96.Information.Information
 commands:
   Website: 
       description: Displays your Website link.
-      permission: information.website
+      permission:
       permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
   Donate:
       description: Displays donation link.
