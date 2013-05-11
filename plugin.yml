@@ -1,0 +1,29 @@
+name: Information
+version: 0.2
+author: lst96
+main: io.github.lst96.Information.Information
+commands:
+  Website: 
+      description: Displays your Website link.
+      permission: information.website
+      permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
+  Donate:
+      description: Displays donation link.
+      permission: information.donate
+      permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
+  Vote:
+      description: Displays voting link.
+      permission: information.vote
+      permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
+  Inforeload:
+      description: Reloads Configuration.
+      permission: information.reload
+      permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
+  staff:
+     description: Displays staff.
+     permission: information.staff
+     permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.
+  rules:
+    description: Displays rules.
+    permission: information.rules
+    permission-message: I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.     
