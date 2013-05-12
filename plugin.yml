@@ -21,6 +21,8 @@ commands:
       description: Starts AutoSaving of World.
   istop:
       description: Stops AutoSaving of World.
+  online:
+      description: Displays online players
     
 permissions:
     information.*:
@@ -33,6 +35,7 @@ permissions:
             information.staff: true
             information.rules: true
             information.ram: true
+            information.online: true
     information.website:
         description: Allows use of website command
         default: op
@@ -53,4 +56,7 @@ permissions:
         default: op
     information.ram:
         description: Allows use of ram command
+        default: op
+    information.online:
+        description: Allows use of online command
         default: op
