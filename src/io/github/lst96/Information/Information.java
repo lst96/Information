@@ -17,12 +17,15 @@ public class Information extends JavaPlugin {
 	   this.logger.info(pdfFile.getName() + " v" + pdfFile.getVersion() + " is enabled.");
 	   getConfig().options().copyDefaults(true);
 	   saveConfig();
+	   Runtime runtime = Runtime.getRuntime();
+       System.gc();
 	   getCommand("website").setExecutor(new Website(this)); 
 	   getCommand("donate").setExecutor(new Donate(this)); 
 	   getCommand("vote").setExecutor(new Vote(this)); 
 	   getCommand("inforeload").setExecutor(new Inforeload(this)); 
 	   getCommand("staff").setExecutor(new Staff(this)); 
 	   getCommand("rules").setExecutor(new Rules(this));
+	   getCommand("ram").setExecutor(new Ram(this));
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
