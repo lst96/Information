@@ -15,6 +15,12 @@ commands:
       description: Displays staff. 
   Rules:
       description: Displays rules.
+  serverstate:
+    description: Show the server stats using a command
+    usage: /serverstate
+  ss:
+    description: Short-Command for serverstate
+    usage: /ss
     
 permissions:
     information.*:
@@ -26,6 +32,7 @@ permissions:
             information.reload: true
             information.staff: true
             information.rules: true
+            information.showstate: true
     information.website:
         description: Allows use of website command
         default: op
@@ -43,6 +50,9 @@ permissions:
         default: op
     information.rules:
         description: Allows use of rules command
+        default: op
+    Information.showstate:
+        description: Permission to show the server stats
         default: op
         
     

@@ -9,6 +9,7 @@ public class Information extends JavaPlugin {
 	
 	public final Logger logger = Logger.getLogger("Minecraft");
 	public static Information plugin;
+
 	
    @Override 
    public void onEnable (){
