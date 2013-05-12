@@ -28,6 +28,7 @@ permissions:
             information.reload: true
             information.staff: true
             information.rules: true
+            information.ram: true
     information.website:
         description: Allows use of website command
         default: op
