@@ -1,3 +1,4 @@
+
 package io.github.lst96.Information;
 
 import org.bukkit.command.Command;
@@ -22,7 +23,7 @@ public class Online implements CommandExecutor{
     	if(commandLabel.equalsIgnoreCase("online")){
     		Player player = (Player) sender;
     	    if(player.hasPermission("information.online")) {
-    		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.YELLOW + Bukkit.getOnlinePlayers().length);
+    		   player.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.YELLOW + Bukkit.getOnlinePlayers().length + " " + "of" + " " + Bukkit.getMaxPlayers());
     	    }else{
     		   player.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
     		}
