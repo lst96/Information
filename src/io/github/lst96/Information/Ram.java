@@ -29,7 +29,7 @@ public class Ram implements CommandExecutor{
               sender.sendMessage(ChatColor.GOLD + "[Used Ram]: " + ChatColor.RESET + ChatColor.RED + (runtime.totalMemory() - runtime.freeMemory()) / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Free Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.freeMemory() / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getBukkitVersion());
-              sender.sendMessage(ChatColor.GOLD + "[Information Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getServer().getPluginManager().getPlugin("Information").getDescription());
+              sender.sendMessage(ChatColor.GOLD + "[Information Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getServer().getPluginManager().getPlugin("Information").getDescription().getVersion());
               return true;
             }
 
