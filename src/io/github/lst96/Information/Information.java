@@ -26,6 +26,7 @@ public class Information extends JavaPlugin {
 	   getCommand("staff").setExecutor(new Staff(this)); 
 	   getCommand("rules").setExecutor(new Rules(this));
 	   getCommand("ram").setExecutor(new Ram(this));
+	   getCommand("isave").setExecutor(new Save(this));
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
