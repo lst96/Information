@@ -1,5 +1,6 @@
 package io.github.lst96.Information;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -26,6 +27,7 @@ public class Ram implements CommandExecutor{
               sender.sendMessage(ChatColor.GOLD + "[Allocated Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.totalMemory() / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Used Ram]: " + ChatColor.RESET + ChatColor.RED + (runtime.totalMemory() - runtime.freeMemory()) / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Free Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.freeMemory() / 1048576L + " MB");
+              sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getBukkitVersion());
               return true;
             }
 
