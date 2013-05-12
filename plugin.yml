@@ -53,6 +53,6 @@ permissions:
     information.ram:
         description: Allows use of ram command
         default: op
-    information.save
+    information.save:
         description: Allows use of isave command
         default: op
