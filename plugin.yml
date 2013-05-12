@@ -18,7 +18,9 @@ commands:
   ram:
       description: Displays Ram usage.
   isave:
-      description: Saves World and Player data.
+      description: Starts AutoSaving of World.
+  istop:
+      description: Stops AutoSaving of World.
     
 permissions:
     information.*:
@@ -31,7 +33,6 @@ permissions:
             information.staff: true
             information.rules: true
             information.ram: true
-            information.save: true
     information.website:
         description: Allows use of website command
         default: op
@@ -52,7 +53,4 @@ permissions:
         default: op
     information.ram:
         description: Allows use of ram command
-        default: op
-    information.save:
-        description: Allows use of isave command
         default: op

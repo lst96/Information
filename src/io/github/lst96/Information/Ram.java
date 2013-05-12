@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.PluginDescriptionFile;
 
 public class Ram implements CommandExecutor{
 	
@@ -28,6 +29,7 @@ public class Ram implements CommandExecutor{
               sender.sendMessage(ChatColor.GOLD + "[Used Ram]: " + ChatColor.RESET + ChatColor.RED + (runtime.totalMemory() - runtime.freeMemory()) / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Free Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.freeMemory() / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getBukkitVersion());
+              sender.sendMessage(ChatColor.GOLD + "[Information Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getServer().getPluginManager().getPlugin("Information").getDescription());
               return true;
             }
 
