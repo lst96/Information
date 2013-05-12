@@ -17,10 +17,8 @@ commands:
       description: Displays rules.
   ram:
       description: Displays Ram usage.
-  isave:
-      description: Starts AutoSaving of World.
-  istop:
-      description: Stops AutoSaving of World.
+  motd:
+      description: Displays Motd.
   online:
       description: Displays online players
     
@@ -59,4 +57,7 @@ permissions:
         default: op
     information.online:
         description: Allows use of online command
+        default: op
+    information.motd:
+        description: Allows use of motd command
         default: op
