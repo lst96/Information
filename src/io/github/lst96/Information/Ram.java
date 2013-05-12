@@ -22,7 +22,7 @@ public class Ram implements CommandExecutor{
             System.gc();
             if ((sender.isOp()) || (sender.hasPermission("information.ram"))) {
               long diff = System.currentTimeMillis() - this.serverStart;
-              sender.sendMessage(ChatColor.GOLD + "[Uptime]: " + (int)(diff / 86400000L) + "d" + " " + (int)(diff / 3600000L % 24L) + "h" + " " + (int)(diff / 60000L % 60L) + "m" + " " + (int)(diff / 1000L % 60L) + "s");
+              sender.sendMessage(ChatColor.GOLD + "[Uptime]: " + ChatColor.RESET + ChatColor.RED + (int)(diff / 86400000L) + "d" + " " + (int)(diff / 3600000L % 24L) + "h" + " " + (int)(diff / 60000L % 60L) + "m" + " " + (int)(diff / 1000L % 60L) + "s");
               sender.sendMessage(ChatColor.GOLD + "[Maximum Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.maxMemory() / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Allocated Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.totalMemory() / 1048576L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Used Ram]: " + ChatColor.RESET + ChatColor.RED + (runtime.totalMemory() - runtime.freeMemory()) / 1048576L + " MB");
