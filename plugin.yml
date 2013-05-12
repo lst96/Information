@@ -15,12 +15,14 @@ commands:
       description: Displays staff. 
   Rules:
       description: Displays rules.
-  ram:
+  Ram:
       description: Displays Ram usage.
-  motd:
+  Motd:
       description: Displays Motd.
-  online:
+  Online:
       description: Displays online players
+  Ip:
+      description: Displays Server Ip
     
 permissions:
     information.*:
@@ -60,4 +62,7 @@ permissions:
         default: op
     information.motd:
         description: Allows use of motd command
+        default: op
+    information.ip
+        description: Allows use of ip command
         default: op

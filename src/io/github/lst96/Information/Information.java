@@ -28,6 +28,7 @@ public class Information extends JavaPlugin {
 	   getCommand("ram").setExecutor(new Ram(this));
 	   getCommand("motd").setExecutor(new Motd(this));
 	   getCommand("online").setExecutor(new Online(this));
+	   getCommand("ip").setExecutor(new Ip(this));
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
