@@ -1,4 +1,4 @@
-# Default Configuration generated with Information v0.4
+# Default Configuration generated with Information v0.5
 # Separate By Comma
 
 Website: ''
@@ -9,3 +9,4 @@ VoteLink3: ''
 VoteLink4: ''
 Rules: ''
 Staff: ''
+ServerIp: ''

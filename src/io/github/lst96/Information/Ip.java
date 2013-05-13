@@ -19,7 +19,7 @@ public class Ip implements CommandExecutor{
 	   {
 	if(commandLabel.equalsIgnoreCase("ip")){
 		if ((sender.isOp()) || (sender.hasPermission("information.ip"))) {
-		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GOLD + Bukkit.getIp());
+		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.GOLD + plugin.getConfig().getString("serverip"));
 	    return true;
 		}
 		sender.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
