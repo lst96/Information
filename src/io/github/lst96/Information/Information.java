@@ -29,6 +29,7 @@ public class Information extends JavaPlugin {
 	   getCommand("motd").setExecutor(new Motd(this));
 	   getCommand("online").setExecutor(new Online(this));
 	   getCommand("ip").setExecutor(new Ip(this));
+	   getCommand("player").setExecutor(new PlayerInfo(this));
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
