@@ -23,6 +23,8 @@ commands:
       description: Displays online players
   Ip:
       description: Displays Server Ip.
+  Player:
+      description: Displays player info.
     
 permissions:
     information.*:
@@ -36,6 +38,8 @@ permissions:
             information.rules: true
             information.ram: true
             information.online: true
+            information.ip: true
+            information.player: true
     information.website:
         description: Allows use of website command
         default: op
@@ -65,4 +69,7 @@ permissions:
         default: op
     information.ip:
         description: Allows use of ip command
+        default: op
+    information.player:
+        description: Allows use of player command
         default: op
