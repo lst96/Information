@@ -37,17 +37,15 @@ public class PlayerInfo
       boolean flyCheck = targetplayer.isFlying();
       boolean opCheck = targetplayer.isOp();
       Location location = targetplayer.getLocation();
-      int fireCheck = targetplayer.getFireTicks();
-      sender.sendMessage(ChatColor.GOLD + playername + " health is at: " + health + "/20");
-      sender.sendMessage(ChatColor.GOLD + playername + "'s Location: " + "X: " + location.getBlockX() + ", Y: " + location.getBlockY() + ", Z: " + location.getBlockZ());
-      sender.sendMessage(ChatColor.GOLD + playername + " is in world: " + location.getWorld().getName());
-      sender.sendMessage(ChatColor.GOLD + playername + "'s food level is at: " + foodLevel + "/20");
-      sender.sendMessage(ChatColor.GOLD + playername + " Gamemode is: " + gamemode);
-      sender.sendMessage(ChatColor.GOLD + playername + " exp level is " + exp);
-      sender.sendMessage(ChatColor.GOLD + playername + "'s ip address is " + playerip);
-      sender.sendMessage(ChatColor.GOLD + playername + " is flying: " + flyCheck);
-      sender.sendMessage(ChatColor.GOLD + playername + " is op: " + opCheck);
-      sender.sendMessage(ChatColor.GOLD + playername + " is on fire: " + fireCheck);
+      sender.sendMessage(ChatColor.GOLD +"====== Player: " + ChatColor.RED + playername + ChatColor.GOLD + "======");
+      sender.sendMessage(ChatColor.GOLD + " Health: " + ChatColor.WHITE + health + "/20");
+      sender.sendMessage(ChatColor.GOLD + " Location: " + ChatColor.WHITE + "(" + location.getWorld().getName() + ", " + location.getBlockX() + ", " + location.getBlockY() + ", " + location.getBlockZ() + ")");
+      sender.sendMessage(ChatColor.GOLD + " Food: " + ChatColor.WHITE + foodLevel + "/20");
+      sender.sendMessage(ChatColor.GOLD + " Gamemode: " + ChatColor.WHITE + gamemode);
+      sender.sendMessage(ChatColor.GOLD + " Exp: " + ChatColor.WHITE + exp);
+      sender.sendMessage(ChatColor.GOLD + " IP Address: " + ChatColor.WHITE + playerip);
+      sender.sendMessage(ChatColor.GOLD + " Fly mode: " + ChatColor.GREEN + flyCheck);
+      sender.sendMessage(ChatColor.GOLD + " OP: " + ChatColor.GREEN + opCheck);
     }
 
     return false;

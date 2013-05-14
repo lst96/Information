@@ -25,6 +25,7 @@ commands:
       description: Displays Server Ip.
   Player:
       description: Displays player info.
+      usage: /<command> <player>
     
 permissions:
     information.*:
