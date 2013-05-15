@@ -1,6 +1,7 @@
 package io.github.lst96.Information;
 
 import io.github.lst96.Information.metrics.Metrics;
+import io.github.lst96.Information.update.UpdateChecker;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -10,14 +11,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Information extends JavaPlugin {
 	
-	public final Logger logger = Logger.getLogger("Minecraft");
-	public static Information plugin;
+	protected Logger log;
+	public PluginDescriptionFile pdfFile;
+	protected UpdateChecker updatechecker;
 
 	
    @Override 
    public void onEnable (){
+	   this.log = this.getLogger();
 	   PluginDescriptionFile pdfFile = getDescription();
-	   this.logger.info(pdfFile.getName() + " v" + pdfFile.getVersion() + " is enabled.");
+	   this.log.info(pdfFile.getName() + " v" + pdfFile.getVersion() + " is enabled.");
 	   getConfig().options().copyDefaults(true);
 	   saveConfig();
 	   Runtime runtime = Runtime.getRuntime();
@@ -28,6 +31,12 @@ public class Information extends JavaPlugin {
     	} catch (IOException e) {
     	    // Failed to submit the stats :-(
     	}
+       this.updatechecker = new UpdateChecker(this, "http://dev.bukkit.org/server-mods/information/files.rss");
+     
+       if (this.updatechecker.updateNeeded()){
+    	   this.log.info("A new version is available: " + this.updatechecker.getVersion());
+    	   this.log.info("Get it from: " + this.updatechecker.getLink());
+       }
 	   getCommand("website").setExecutor(new Website(this)); 
 	   getCommand("donate").setExecutor(new Donate(this)); 
 	   getCommand("vote").setExecutor(new Vote(this)); 
@@ -42,7 +51,7 @@ public class Information extends JavaPlugin {
    }
    public void onDisable(){
 	   PluginDescriptionFile pdfFile = getDescription();
-	   this.logger.info(pdfFile.getName() + " v" + pdfFile.getVersion() + " is Disabled.");
+	   getLogger().info(pdfFile.getName() + " v" + pdfFile.getVersion() + " is Disabled.");
    }
 }
 

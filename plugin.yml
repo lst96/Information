@@ -1,5 +1,5 @@
 name: Information
-version: 0.5
+version: 0.3
 authors: [lst96, Hodgetts330]
 main: io.github.lst96.Information.Information
 commands:

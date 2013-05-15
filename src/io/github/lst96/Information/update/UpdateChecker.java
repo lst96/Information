@@ -1,62 +1,61 @@
 package io.github.lst96.Information.update;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import io.github.lst96.Information.Information;
 
-public class UpdateChecker
-{
-  public static String dcPage = "http://dev.bukkit.org/server-mods/information/";
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-  public static String getLatestVersion() {
-    try {
-      URL devPage = new URL(dcPage);
-      BufferedReader in = new BufferedReader(new InputStreamReader(devPage.openStream()));
+import javax.xml.parsers.DocumentBuilderFactory;
 
-      String importantLine = "";
-      String line;
-      while ((line = in.readLine()) != null) {
-        if (line.trim().equalsIgnoreCase("<dt>Recent files</dt>")) {
-          importantLine = filterHTML(in.readLine());
-        }
-      }
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
-      in.close();
+public class UpdateChecker {
+	
+	private Information plugin;
+	private URL filesFeed;
+	
+	private String version;
+	private String link;
+	
+	public UpdateChecker (Information plugin, String url){
+		this.plugin = plugin;
+		
+		try {
+			this.filesFeed = new URL(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}	
 
-      if (importantLine.equals("")) {
-        return "Error while checking!";
-      }
-      String[] files = importantLine.split("R: ");
-      return files[1].trim();
-    } catch (Exception e) {
-      Information.logger.log(Level.WARNING, "Error checking for updates", e);
-    }
-    return "Error during check!";
-  }
+public boolean updateNeeded(){
+	try{
+	InputStream input = this.filesFeed.openConnection().getInputStream();
+	Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(input);
+	
+	Node latestFile = document.getElementsByTagName("item").item(0);
+	NodeList children = latestFile.getChildNodes();
+	
+	this.version = children.item(1).getTextContent().replaceAll("[a-zA-Z ]", "");
+	this.link = children.item(3).getTextContent();
 
-  public static String filterHTML(String toFilter)
-  {
-    String HTMLfiltered = "";
-    boolean HTMLtag = false;
-    for (int i = 0; i < toFilter.length(); i++) {
-      if (toFilter.charAt(i) == '<')
-        HTMLtag = true;
-      else if (toFilter.charAt(i) == '>') {
-        if (!HTMLtag) {
-          HTMLfiltered = HTMLfiltered + toFilter.charAt(i);
-        }
-        else {
-          HTMLtag = false;
-        }
-      }
-      else if (!HTMLtag) {
-        HTMLfiltered = HTMLfiltered + toFilter.charAt(i);
-      }
-    }
+	if (!plugin.getDescription().getVersion().equals(this.version)){
+		return true;
+	    }
+	}catch (Exception e){
+		e.printStackTrace();
+	}
+	
+	return false;
+}
+	public String getVersion(){
+		return this.version;
+		}
 
-    return HTMLfiltered;
-  }
+	public String getLink() {
+		return this.link;
+	}
+	
 }
