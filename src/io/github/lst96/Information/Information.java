@@ -1,5 +1,8 @@
 package io.github.lst96.Information;
 
+import io.github.lst96.Information.metrics.Metrics;
+
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -19,6 +22,12 @@ public class Information extends JavaPlugin {
 	   saveConfig();
 	   Runtime runtime = Runtime.getRuntime();
        System.gc();
+       try {
+    	    Metrics metrics = new Metrics(this);
+    	    metrics.start();
+    	} catch (IOException e) {
+    	    // Failed to submit the stats :-(
+    	}
 	   getCommand("website").setExecutor(new Website(this)); 
 	   getCommand("donate").setExecutor(new Donate(this)); 
 	   getCommand("vote").setExecutor(new Vote(this)); 
