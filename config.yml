@@ -10,3 +10,5 @@ VoteLink4: ''
 Rules: ''
 Staff: ''
 ServerIp: ''
+autoupdate-check: true
+messages: true

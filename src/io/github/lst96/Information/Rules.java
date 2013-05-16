@@ -18,7 +18,7 @@ public class Rules implements CommandExecutor{
     {
     	if(commandLabel.equalsIgnoreCase("rules")){
     		if ((sender.isOp()) || (sender.hasPermission("information.rules"))) {
-    		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("rules"));
+    		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("Rules"));
     	    return true;
     		}
     		sender.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");

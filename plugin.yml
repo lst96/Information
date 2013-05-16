@@ -1,5 +1,5 @@
 name: Information
-version: 0.3
+version: 0.5
 authors: [lst96, Hodgetts330]
 main: io.github.lst96.Information.Information
 commands:
@@ -25,7 +25,6 @@ commands:
       description: Displays Server Ip.
   Player:
       description: Displays player info.
-      usage: /<command> <player>
     
 permissions:
     information.*:

@@ -18,7 +18,7 @@ public class Donate implements CommandExecutor{
     {
     	if(commandLabel.equalsIgnoreCase("donate")){
     		if ((sender.isOp()) || (sender.hasPermission("information.donate"))) {
-    		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_BLUE + plugin.getConfig().getString("donate"));
+    		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.DARK_BLUE + plugin.getConfig().getString("Donate"));
     	    return true;
     		}
     		sender.sendMessage(ChatColor.DARK_RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
