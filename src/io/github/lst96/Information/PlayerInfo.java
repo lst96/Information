@@ -49,8 +49,6 @@ public class PlayerInfo
       sender.sendMessage(ChatColor.GOLD + " IP Address: " + ChatColor.WHITE + playerip);
       sender.sendMessage(ChatColor.GOLD + " Fly mode: " + ChatColor.GREEN + flyCheck);
       sender.sendMessage(ChatColor.GOLD + " OP: " + ChatColor.GREEN + opCheck);
-    }
-
     return false;
   }
 }
