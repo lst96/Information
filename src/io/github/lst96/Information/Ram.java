@@ -10,7 +10,7 @@ public class Ram implements CommandExecutor{
 	
 	private long serverStart = System.currentTimeMillis();
 	
-	private Information plugin; // pointer to your main class, unrequired if you don't need methods from the main class
+	private Information plugin; 
 	 
     public Ram(Information instance) {
         this.plugin = instance;
@@ -32,7 +32,7 @@ public class Ram implements CommandExecutor{
               return true;
             }
 
-            sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "You don't have permissions.");
+            sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
             return true;
         }
 }

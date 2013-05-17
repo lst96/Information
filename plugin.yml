@@ -42,34 +42,23 @@ permissions:
             information.player: true
     information.website:
         description: Allows use of website command
-        default: op
     information.donate:
         description: Allows use of donate command
-        default: op
     information.vote:
         description: Allows use of vote command
-        default: op
     information.reload:
         description: Allows use of inforeload command
-        default: op
     information.staff:
         description: Allows use of staff command
-        default: op
     information.rules:
         description: Allows use of rules command
-        default: op
     information.ram:
         description: Allows use of ram command
-        default: op
     information.online:
         description: Allows use of online command
-        default: op
     information.motd:
         description: Allows use of motd command
-        default: op
     information.ip:
         description: Allows use of ip command
-        default: op
     information.player:
         description: Allows use of player command
-        default: op
