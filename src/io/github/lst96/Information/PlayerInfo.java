@@ -23,12 +23,10 @@ public class PlayerInfo
   public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
   {
     Player targetplayer = Bukkit.getServer().getPlayer(args[0]);
-    if ((commandLabel.equalsIgnoreCase("player")) || (sender.hasPermission("information.player"))) {
+    if(commandLabel.equalsIgnoreCase("player")){
+		if ((sender.isOp()) || (sender.hasPermission("information.player"))) {
       if (targetplayer == null) {
         sender.sendMessage(ChatColor.YELLOW + args[0] + ChatColor.GOLD + " is not online!");
-        return true;
-      }
-        sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
         return true;
       }
       int health = targetplayer.getPlayer().getHealth();
@@ -49,6 +47,12 @@ public class PlayerInfo
       sender.sendMessage(ChatColor.GOLD + " IP Address: " + ChatColor.WHITE + playerip);
       sender.sendMessage(ChatColor.GOLD + " Fly mode: " + ChatColor.GREEN + flyCheck);
       sender.sendMessage(ChatColor.GOLD + " OP: " + ChatColor.GREEN + opCheck);
-    return false;
+      return true;
+		}
+		sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+        return true;
+    }
+  return false;
   }
 }
+     
