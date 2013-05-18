@@ -2,6 +2,8 @@ package io.github.lst96.Information;
 
 import java.util.logging.Logger;
 import net.h31ix.updater.Updater;
+
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.github.lst96.Information.metrics.Metrics;
@@ -23,6 +25,7 @@ public class Information extends JavaPlugin {
 		pdfFile = this.getDescription();
 		PREFIX = "[" + pdfFile.getName() + "]";
 		getServer().getPluginManager().registerEvents(new Listeners(this), this);
+		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
 		this.logger.info(PREFIX + " version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
 		getConfig().options().copyDefaults(true);
