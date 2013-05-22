@@ -26,7 +26,7 @@ public class Information extends JavaPlugin {
 		PREFIX = "[" + pdfFile.getName() + "]";
 		getServer().getPluginManager().registerEvents(new Listeners(this), this);
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
-		this.logger.info(PREFIX + " version " + pdfFile.getVersion() + " has been enabled.");
+		this.logger.info(PREFIX + " Information version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
 		getConfig().options().copyDefaults(true);
 	    saveConfig();
