@@ -49,7 +49,7 @@ public class Information extends JavaPlugin {
 	    getCommand("online").setExecutor(new Online(this));
 	    getCommand("ip").setExecutor(new Ip(this));
 	    getCommand("player").setExecutor(new PlayerInfo(this));
-	    getCommand("twitter").setExecutor(new PlayerInfo(this));
+	    getCommand("twitter").setExecutor(new Twitter(this));
 		
 		messages = this.getConfig().getBoolean("messages");
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
