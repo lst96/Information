@@ -25,6 +25,9 @@ commands:
       description: Displays Server Ip.
   Player:
       description: Displays player info.
+  Twitter:
+      description:
+                   Displays twitter link.
     
 permissions:
     information.*:
@@ -40,6 +43,7 @@ permissions:
             information.online: true
             information.ip: true
             information.player: true
+            information.twitter: true
     information.website:
         description: Allows use of website command
     information.donate:
@@ -62,3 +66,5 @@ permissions:
         description: Allows use of ip command
     information.player:
         description: Allows use of player command
+    information.twitter:
+        description: Allows use of twitter command
