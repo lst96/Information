@@ -25,6 +25,7 @@ public class Information extends JavaPlugin {
 		pdfFile = this.getDescription();
 		PREFIX = "[" + pdfFile.getName() + "]";
 		getServer().getPluginManager().registerEvents(new Listeners(this), this);
+		getServer().getPluginManager().registerEvents(new Elistener(this), this);
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
 		this.logger.info(PREFIX + " Information version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
@@ -50,7 +51,9 @@ public class Information extends JavaPlugin {
 	    getCommand("ip").setExecutor(new Ip(this));
 	    getCommand("player").setExecutor(new PlayerInfo(this));
 	    getCommand("twitter").setExecutor(new Twitter(this));
-		
+	    getCommand("facebook").setExecutor(new Facebook(this));
+		getCommand("einfo").setExecutor(new Einfo(this));
+	    
 		messages = this.getConfig().getBoolean("messages");
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
 		if(autoUpdate) {

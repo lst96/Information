@@ -1,5 +1,5 @@
 name: Information
-version: 0.6
+version: 0.7
 authors: [lst96, Hodgetts330]
 main: io.github.lst96.Information.Information
 commands:
@@ -26,9 +26,11 @@ commands:
   Player:
       description: Displays player info.
   Twitter:
-      description:
-                   Displays twitter link.
-    
+      description: Displays twitter link.
+  Facebook:
+      description: Displays facebook link. 
+  Einfo:
+      description: Displays Extra Information about the server.   
 permissions:
     information.*:
         description: Gives access to all information commands
@@ -44,27 +46,64 @@ permissions:
             information.ip: true
             information.player: true
             information.twitter: true
+            information.facebook: true
+            information.extra: true
+    information.member:
+        description: Gives access to member commands
+        children:
+            information.website: true
+            information.donate: true
+            information.vote: true
+            information.reload: false
+            information.staff: true
+            information.ram: false
+            information.online: false
+            information.ip: true
+            information.player: false
+            information.twitter: true
+            information.facebook: true
+            information.extra: true
+    information.admin:
+        description: Gives access to admin commands
+        children:
+            information.website: true
+            information.donate: true
+            information.vote: true
+            information.reload: false
+            information.staff: true
+            information.rules: true
+            information.ram: true
+            information.online: true
+            information.ip: true
+            information.player: true
+            information.twitter: true
+            information.facebook: true
+            information.extra: true
     information.website:
-        description: Allows use of website command
+        description: Allows use of website command.
     information.donate:
-        description: Allows use of donate command
+        description: Allows use of donate command.
     information.vote:
-        description: Allows use of vote command
+        description: Allows use of vote command.
     information.reload:
-        description: Allows use of inforeload command
+        description: Allows use of inforeload command.
     information.staff:
-        description: Allows use of staff command
+        description: Allows use of staff command.
     information.rules:
-        description: Allows use of rules command
+        description: Allows use of rules command.
     information.ram:
-        description: Allows use of ram command
+        description: Allows use of ram command.
     information.online:
-        description: Allows use of online command
+        description: Allows use of online command.
     information.motd:
-        description: Allows use of motd command
+        description: Allows use of motd command.
     information.ip:
-        description: Allows use of ip command
+        description: Allows use of ip command.
     information.player:
-        description: Allows use of player command
+        description: Allows use of player command.
     information.twitter:
-        description: Allows use of twitter command
+        description: Allows use of twitter command.
+    information.facebook:
+        description: Allows use of facebook command.
+    information.extra:
+        description: Allows use of Einfo command.

@@ -1,4 +1,4 @@
-# Default Configuration generated with Information v0.6
+# Default Configuration generated with Information v0.7
 # Separate By Comma
 
 Website: ''
@@ -11,5 +11,7 @@ Rules: ''
 Staff: ''
 ServerIp: ''
 Twitter: ''
+Facebook: ''
+Extra: ''
 autoupdate-check: true
 messages: true
