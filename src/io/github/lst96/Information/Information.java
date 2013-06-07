@@ -53,6 +53,7 @@ public class Information extends JavaPlugin {
 	    getCommand("twitter").setExecutor(new Twitter(this));
 	    getCommand("facebook").setExecutor(new Facebook(this));
 		getCommand("einfo").setExecutor(new Einfo(this));
+		getCommand("youtube").setExecutor(new Youtube(this));
 	    
 		messages = this.getConfig().getBoolean("messages");
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");

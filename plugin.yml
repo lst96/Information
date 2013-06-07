@@ -30,7 +30,9 @@ commands:
   Facebook:
       description: Displays facebook link. 
   Einfo:
-      description: Displays Extra Information about the server.   
+      description: Displays Extra Information about the server.
+  Youtube:
+      description: Displays youtube link   
 permissions:
     information.*:
         description: Gives access to all information commands
@@ -48,6 +50,7 @@ permissions:
             information.twitter: true
             information.facebook: true
             information.extra: true
+            information.youtube: true
     information.member:
         description: Gives access to member commands
         children:
@@ -63,6 +66,7 @@ permissions:
             information.twitter: true
             information.facebook: true
             information.extra: true
+            information.youtube: true
     information.admin:
         description: Gives access to admin commands
         children:
@@ -79,6 +83,7 @@ permissions:
             information.twitter: true
             information.facebook: true
             information.extra: true
+            information.youtube: true
     information.website:
         description: Allows use of website command.
     information.donate:
@@ -107,3 +112,6 @@ permissions:
         description: Allows use of facebook command.
     information.extra:
         description: Allows use of Einfo command.
+    information.youtube:
+        description: Allows use of youtube command.    
+    
