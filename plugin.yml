@@ -1,5 +1,5 @@
 name: Information
-version: 0.7
+version: 0.8
 authors: [lst96, Hodgetts330]
 main: io.github.lst96.Information.Information
 commands:
@@ -13,7 +13,7 @@ commands:
       description: Reloads Configuration.   
   Staff:
       description: Displays staff. 
-  Rules:
+  Erules:
       description: Displays rules.
   Ram:
       description: Displays Ram usage.

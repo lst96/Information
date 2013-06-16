@@ -16,7 +16,7 @@ public class Rules implements CommandExecutor{
     
     public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
-    	if(commandLabel.equalsIgnoreCase("rules")){
+    	if(commandLabel.equalsIgnoreCase("erules")){
     		if ((sender.isOp()) || (sender.hasPermission("information.rules"))) {
     		   sender.sendMessage(ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA + plugin.getConfig().getString("Rules"));
     	    return true;
