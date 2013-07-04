@@ -2,7 +2,6 @@ package io.github.lst96.Information;
 
 import java.util.logging.Logger;
 import net.h31ix.updater.Updater;
-
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,7 +17,8 @@ public class Information extends JavaPlugin {
 	public boolean messages = false;
 	public boolean autoUpdate = false;
 	Updater updater;
-	
+	private boolean compatible;
+	 
 	public void onEnable() {
 		
 		this.saveDefaultConfig();
@@ -59,7 +59,14 @@ public class Information extends JavaPlugin {
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
 		if(autoUpdate) {
 			setupUpdater();
+		String mcVersion = Bukkit.getBukkitVersion();
+	    this.compatible = mcVersion.startsWith("1.6.1");
+	    if ((this.getConfig().getBoolean("check_bukkit_compatibility")) && (!this.compatible)) {
+	      this.logger.info("[Information] is not compatible with " + Bukkit.getVersion());
+	      getServer().getPluginManager().disablePlugin(this);
+	      return;
 		}
+	  }
 	}
 	public void onDisable() {
 		this.logger.info(PREFIX +" plugin disabled.");

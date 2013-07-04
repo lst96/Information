@@ -1,6 +1,6 @@
 name: Information
 version: 1.0
-authors: lst96
+author: lst96
 main: io.github.lst96.Information.Information
 commands:
   Website: 

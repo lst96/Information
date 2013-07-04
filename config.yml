@@ -16,3 +16,4 @@ Youtube: ''
 Extra: ''
 autoupdate-check: true
 messages: true
+check_bukkit_compatibility: false

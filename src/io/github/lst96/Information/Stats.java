@@ -31,9 +31,9 @@ public class Stats implements CommandExecutor{
     			sender.sendMessage(ChatColor.GOLD + "[Ambient Spawn Limit]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getAmbientSpawnLimit());
     			sender.sendMessage(ChatColor.GOLD + "[Ticks Per Animal Spawn]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getTicksPerAnimalSpawns());
     			sender.sendMessage(ChatColor.GOLD + "[Ticks Per Monster Spawn]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getTicksPerMonsterSpawns());
+    			sender.sendMessage(ChatColor.GOLD + "[Spawn Radius]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getOperators());
     		    sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getBukkitVersion());
                 sender.sendMessage(ChatColor.GOLD + "[Information Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getServer().getPluginManager().getPlugin("Information").getDescription().getVersion());
-                sender.sendMessage(ChatColor.GOLD + "[Spawn Radius]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getOperators());
     	    return true;
     		}
     		sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + " I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
