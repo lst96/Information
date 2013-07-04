@@ -26,12 +26,12 @@ public class Stats implements CommandExecutor{
     			sender.sendMessage(ChatColor.GOLD + "[View Distance]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getViewDistance());
     			sender.sendMessage(ChatColor.GOLD + "[Default GameMode]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getDefaultGameMode());
     			sender.sendMessage(ChatColor.GOLD + "[Spawn Radius]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getSpawnRadius());
-    			sender.sendMessage(ChatColor.GOLD + "[Animals Spawn Limit]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getAnimalSpawnLimit());
+    			sender.sendMessage(ChatColor.GOLD + "[Animal Spawn Limit]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getAnimalSpawnLimit());
     			sender.sendMessage(ChatColor.GOLD + "[Monster Spawn Limit]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getMonsterSpawnLimit());
     			sender.sendMessage(ChatColor.GOLD + "[Ambient Spawn Limit]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getAmbientSpawnLimit());
     			sender.sendMessage(ChatColor.GOLD + "[Ticks Per Animal Spawn]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getTicksPerAnimalSpawns());
     			sender.sendMessage(ChatColor.GOLD + "[Ticks Per Monster Spawn]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getTicksPerMonsterSpawns());
-    			sender.sendMessage(ChatColor.GOLD + "[Spawn Radius]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getOperators());
+    			sender.sendMessage(ChatColor.GOLD + "[Ops]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getOperators());
     		    sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getBukkitVersion());
                 sender.sendMessage(ChatColor.GOLD + "[Information Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getServer().getPluginManager().getPlugin("Information").getDescription().getVersion());
     	    return true;
