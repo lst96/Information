@@ -8,6 +8,7 @@ public class Tps
   public static long LastTick = 0L;
  
   public static double getTPS()
+  
   {
     return getTPS(100);
   }

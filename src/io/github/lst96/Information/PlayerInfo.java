@@ -3,8 +3,8 @@ package io.github.lst96.Information;
 import java.net.InetSocketAddress;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,7 +29,7 @@ public class PlayerInfo
         sender.sendMessage(ChatColor.YELLOW + args[0] + ChatColor.GOLD + " is not online!");
         return true;
       }
-      int health = targetplayer.getPlayer().getHealth();
+      int health = (int) targetplayer.getPlayer().getHealth();
       int foodLevel = targetplayer.getPlayer().getFoodLevel();
       float exp = targetplayer.getPlayer().getLevel();
       InetSocketAddress playerip = targetplayer.getAddress();

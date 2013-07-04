@@ -44,7 +44,7 @@ public class Information extends JavaPlugin {
 	    getCommand("vote").setExecutor(new Vote(this));
 	    getCommand("inforeload").setExecutor(new Inforeload(this));
 	    getCommand("staff").setExecutor(new Staff(this));
-	    getCommand("rules").setExecutor(new Rules(this));
+	    getCommand("erules").setExecutor(new Rules(this));
 	    getCommand("ram").setExecutor(new Ram(this));
 	    getCommand("motd").setExecutor(new Motd(this));
 	    getCommand("online").setExecutor(new Online(this));
@@ -54,7 +54,7 @@ public class Information extends JavaPlugin {
 	    getCommand("facebook").setExecutor(new Facebook(this));
 		getCommand("einfo").setExecutor(new Einfo(this));
 		getCommand("youtube").setExecutor(new Youtube(this));
-	    
+		getCommand("stats").setExecutor(new Stats(this));
 		messages = this.getConfig().getBoolean("messages");
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
 		if(autoUpdate) {
@@ -87,6 +87,5 @@ public class Information extends JavaPlugin {
             default:
             	break;
         }
-	}
-	
+	}	
 }

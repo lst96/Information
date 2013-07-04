@@ -1,6 +1,6 @@
 name: Information
-version: 0.8
-authors: [lst96, Hodgetts330]
+version: 1.0
+authors: lst96
 main: io.github.lst96.Information.Information
 commands:
   Website: 
@@ -32,7 +32,9 @@ commands:
   Einfo:
       description: Displays Extra Information about the server.
   Youtube:
-      description: Displays youtube link   
+      description: Displays youtube link
+  Stats:
+      description: Displays Stats about the server.   
 permissions:
     information.*:
         description: Gives access to all information commands
@@ -51,6 +53,7 @@ permissions:
             information.facebook: true
             information.extra: true
             information.youtube: true
+            information.stats: true
     information.member:
         description: Gives access to member commands
         children:
@@ -67,6 +70,7 @@ permissions:
             information.facebook: true
             information.extra: true
             information.youtube: true
+            information.stats: false
     information.admin:
         description: Gives access to admin commands
         children:
@@ -84,6 +88,7 @@ permissions:
             information.facebook: true
             information.extra: true
             information.youtube: true
+            information.stats: true
     information.website:
         description: Allows use of website command.
     information.donate:
@@ -114,4 +119,6 @@ permissions:
         description: Allows use of Einfo command.
     information.youtube:
         description: Allows use of youtube command.    
+    information.stats:
+       description: Allows use of stats command.
     
