@@ -21,7 +21,6 @@ public class Information extends JavaPlugin {
 	 
 	public void onEnable() {
 		
-		this.saveDefaultConfig();
 		pdfFile = this.getDescription();
 		PREFIX = "[" + pdfFile.getName() + "]";
 		getServer().getPluginManager().registerEvents(new Listeners(this), this);
