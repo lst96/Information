@@ -1,40 +1,65 @@
 name: Information
-version: 1.0
+version: 1.1
 author: lst96
 main: io.github.lst96.Information.Information
 commands:
-  Website: 
-      description: Displays your Website link.   
+  website: 
+      description: Displays your Website link.
+      aliases: [infowebsite]
   Donate:
-      description: Displays donation link.  
+      description: Displays donation link.
+      aliases: [infodonate]
   Vote:
-      description: Displays voting link.  
+      description: Displays voting link.
+      aliases: [infovote]
   Inforeload:
-      description: Reloads Configuration.   
+      description: Reloads Configuration. 
+      aliases: []
   Staff:
       description: Displays staff. 
-  Erules:
+      aliases: [infostaff]
+  Rules:
       description: Displays rules.
+      aliases: [inforules]
   Ram:
       description: Displays Ram usage.
+      aliases: [inforam]
   Motd:
       description: Displays Motd.
+      aliases: [infomotd]
   Online:
-      description: Displays online players
+      description: Displays online players.
+      aliases: [infoonline]
   Ip:
       description: Displays Server Ip.
+      aliases: [infoip]
   Player:
       description: Displays player info.
+      aliases: [infoplayer]
   Twitter:
       description: Displays twitter link.
+      aliases: [infotwitter]
   Facebook:
-      description: Displays facebook link. 
+      description: Displays facebook link.
+      aliases: [infofacebook]
   Einfo:
       description: Displays Extra Information about the server.
+      aliases: []
   Youtube:
-      description: Displays youtube link
+      description: Displays youtube link.
+      aliases: [infoyoutube]
   Stats:
       description: Displays Stats about the server.   
+      aliases: [infostats]
+  SetVote:
+      description: Adds voting links.
+      aliases: [infosetvote]
+  DelVote:
+      description: Deletes voting links.
+      aliases: [infodelvote]
+  ViewVote:
+      description: Views currently set voting links.
+      aliases: [infoviewvote]
 permissions:
     information.*:
         description: Gives access to all information commands
@@ -54,6 +79,9 @@ permissions:
             information.extra: true
             information.youtube: true
             information.stats: true
+            inforamtion.setvote: true
+            information.delvote: true
+            information.viewvote: true
     information.member:
         description: Gives access to member commands
         children:
@@ -71,6 +99,9 @@ permissions:
             information.extra: true
             information.youtube: true
             information.stats: false
+            information.setvote: false
+            information.delvote: false
+            information.viewvote: true
     information.admin:
         description: Gives access to admin commands
         children:
@@ -89,6 +120,9 @@ permissions:
             information.extra: true
             information.youtube: true
             information.stats: true
+            information.setvote: true
+            information.delvote: true
+            information.viewvote: true
     information.website:
         description: Allows use of website command.
     information.donate:
@@ -121,4 +155,10 @@ permissions:
         description: Allows use of youtube command.    
     information.stats:
        description: Allows use of stats command.
+    information.setvote:
+       description: Allows use of setvote command.
+    information.delvote:
+       description: Allows use of delvote command.
+    information.viewvote:
+       description: Allows use of viewvote command.
     

@@ -19,7 +19,7 @@ public class Listeners implements Listener {
 	  if(event.getPlayer().isOp() && plugin.isUpdate)
 	  {
 		  event.getPlayer().sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RESET + ChatColor.RED + " An update is available: " + plugin.updater.getLatestVersionString());
-		  event.getPlayer().sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RESET + ChatColor.RED + " Download update at http://dev.bukkit.org/server-mods/information/files/12-information-v1-1/");
+		  event.getPlayer().sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RESET + ChatColor.RED + " Download update at http://dev.bukkit.org/server-mods/information/files/13-information-v1-2/");
 	  }
 	}
 

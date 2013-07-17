@@ -24,7 +24,7 @@ public class PlayerInfo
   {
     Player targetplayer = Bukkit.getServer().getPlayer(args[0]);
     if(commandLabel.equalsIgnoreCase("player")){
-		if ((sender.isOp()) || (sender.hasPermission("information.player"))) {
+		if ((sender.isOp()) || (sender.hasPermission("information.player")));
       if (targetplayer == null) {
         sender.sendMessage(ChatColor.YELLOW + args[0] + ChatColor.GOLD + " is not online!");
         return true;
@@ -51,8 +51,6 @@ public class PlayerInfo
 		}
 		sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + " I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
         return true;
-    }
-  return false;
   }
 }
      

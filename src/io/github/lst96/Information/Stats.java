@@ -17,7 +17,7 @@ public class Stats implements CommandExecutor{
     
     public boolean  onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
-    	if(commandLabel.equalsIgnoreCase("stats")){
+    	if(commandLabel.equalsIgnoreCase("stats"));
     		if ((sender.isOp()) || (sender.hasPermission("information.stats"))) {
     			sender.sendMessage(ChatColor.GOLD + "[Online Mode]: " + ChatColor.RESET + ChatColor.GREEN + Bukkit.getOnlineMode());
     			sender.sendMessage(ChatColor.GOLD + "[Flight Allowed]: " + ChatColor.RESET + ChatColor.GREEN + Bukkit.getAllowFlight());
@@ -39,6 +39,4 @@ public class Stats implements CommandExecutor{
     		sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + " I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
     		return true;
     	}
-    	return false;
-      }
     }

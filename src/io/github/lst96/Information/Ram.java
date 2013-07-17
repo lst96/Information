@@ -9,6 +9,9 @@ import org.bukkit.command.CommandSender;
 public class Ram implements CommandExecutor{
 	
 	private long serverStart = System.currentTimeMillis();
+	long diff = System.currentTimeMillis() - this.serverStart;
+	String uptime = (int)(diff / 86400000L) + "d" + " " + (int)(diff / 3600000L % 24L) + "h" + " " + (int)(diff / 60000L % 60L) + "m" + " " + (int)(diff / 1000L % 60L) + "s";
+	String bukkit = Bukkit.getBukkitVersion();
 	
 	private Information plugin; 
 	 
@@ -38,14 +41,13 @@ public class Ram implements CommandExecutor{
             Runtime runtime = Runtime.getRuntime();
             System.gc();
             if ((sender.isOp()) || (sender.hasPermission("information.ram"))) {
-              long diff = System.currentTimeMillis() - this.serverStart;
-              sender.sendMessage(ChatColor.GOLD + "[Uptime]: " + ChatColor.RESET + ChatColor.RED + (int)(diff / 86400000L) + "d" + " " + (int)(diff / 3600000L % 24L) + "h" + " " + (int)(diff / 60000L % 60L) + "m" + " " + (int)(diff / 1000L % 60L) + "s");
+              sender.sendMessage(ChatColor.GOLD + "[Uptime]: " + uptime);
               sender.sendMessage(ChatColor.GOLD + "[Tps]: " + ChatColor.RESET + color + Tps.getTPS());
               sender.sendMessage(ChatColor.GOLD + "[Maximum Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.maxMemory() / 1024L / 1024L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Allocated Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.totalMemory() / 1024L / 1024L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Used Ram]: " + ChatColor.RESET + ChatColor.RED + (runtime.totalMemory() - runtime.freeMemory()) / 1024L / 1024L + " MB");
               sender.sendMessage(ChatColor.GOLD + "[Free Ram]: " + ChatColor.RESET + ChatColor.RED + runtime.freeMemory() / 1024L / 1024L + " MB");
-              sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getBukkitVersion());
+              sender.sendMessage(ChatColor.GOLD + "[CraftBukkit Version]: " + ChatColor.RESET + ChatColor.RED + bukkit);
               sender.sendMessage(ChatColor.GOLD + "[Information Version]: " + ChatColor.RESET + ChatColor.RED + Bukkit.getServer().getPluginManager().getPlugin("Information").getDescription().getVersion());
               return true;
             }

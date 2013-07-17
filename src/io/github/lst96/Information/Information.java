@@ -5,8 +5,8 @@ import net.h31ix.updater.Updater;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
-import io.github.lst96.Information.metrics.Metrics;
 import java.io.IOException;
+import io.github.lst96.Information.metrics.Metrics;
 
 public class Information extends JavaPlugin {
 	
@@ -19,13 +19,14 @@ public class Information extends JavaPlugin {
 	Updater updater;
 	private boolean compatible;
 	 
+    @Override
 	public void onEnable() {
 		
 		pdfFile = this.getDescription();
 		PREFIX = "[" + pdfFile.getName() + "]";
-		getServer().getPluginManager().registerEvents(new Listeners(this), this);
-		getServer().getPluginManager().registerEvents(new Elistener(this), this);
-		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
+		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
+		new Elistener(this);
+		new Listeners(this);
 		this.logger.info(PREFIX + " Information version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
 		getConfig().options().copyDefaults(true);
@@ -43,7 +44,7 @@ public class Information extends JavaPlugin {
 	    getCommand("vote").setExecutor(new Vote(this));
 	    getCommand("inforeload").setExecutor(new Inforeload(this));
 	    getCommand("staff").setExecutor(new Staff(this));
-	    getCommand("erules").setExecutor(new Rules(this));
+	    getCommand("rules").setExecutor(new Rules(this));
 	    getCommand("ram").setExecutor(new Ram(this));
 	    getCommand("motd").setExecutor(new Motd(this));
 	    getCommand("online").setExecutor(new Online(this));
@@ -54,12 +55,15 @@ public class Information extends JavaPlugin {
 		getCommand("einfo").setExecutor(new Einfo(this));
 		getCommand("youtube").setExecutor(new Youtube(this));
 		getCommand("stats").setExecutor(new Stats(this));
+		getCommand("setvote").setExecutor(new SetVote(this));
+		getCommand("delvote").setExecutor(new DelVote(this));
+		getCommand("viewvote").setExecutor(new ViewVote(this));
 		messages = this.getConfig().getBoolean("messages");
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
 		if(autoUpdate) {
 			setupUpdater();
 		String mcVersion = Bukkit.getBukkitVersion();
-	    this.compatible = mcVersion.startsWith("1.6.1");
+	    this.compatible = mcVersion.startsWith("1.6.2");
 	    if ((this.getConfig().getBoolean("check_bukkit_compatibility")) && (!this.compatible)) {
 	      this.logger.info("[Information] is not compatible with " + Bukkit.getVersion());
 	      getServer().getPluginManager().disablePlugin(this);
@@ -67,6 +71,7 @@ public class Information extends JavaPlugin {
 		}
 	  }
 	}
+    @Override
 	public void onDisable() {
 		this.logger.info(PREFIX +" plugin disabled.");
 	}
