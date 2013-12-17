@@ -10,7 +10,7 @@ import org.bukkit.ChatColor;
 
 public class Vote implements CommandExecutor{
 	
-	private Information plugin; // pointer to your main class, unrequired if you don't need methods from the main class
+	private Information plugin;
 	 
     public Vote(Information instance) {
         this.plugin = instance;
@@ -21,9 +21,9 @@ public class Vote implements CommandExecutor{
     {
     	if(commandLabel.equalsIgnoreCase("vote"));
     		if ((sender.isOp()) || (sender.hasPermission("information.vote"))) {
-    		List Vote = plugin.getConfig().getStringList("Vote");
+    		List<?> Vote = plugin.getConfig().getStringList("Vote");
     		String Vote1;
-    		for (Iterator iterator = Vote.iterator(); iterator.hasNext(); sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Vote1)))
+    		for (Iterator<?> iterator = Vote.iterator(); iterator.hasNext(); sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Vote1)))
                 Vote1 = (String)iterator.next();
     				return true;
     		}

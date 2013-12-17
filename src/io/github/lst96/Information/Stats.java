@@ -7,11 +7,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 public class Stats implements CommandExecutor{
-	
-	private Information plugin; // pointer to your main class, unrequired if you don't need methods from the main class
 	 
     public Stats(Information instance) {
-        this.plugin = instance;
         
     }
     

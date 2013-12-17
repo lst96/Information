@@ -7,8 +7,8 @@ import org.bukkit.ChatColor;
 
 public class Einfo implements CommandExecutor{
 	
-	private Information plugin; // pointer to your main class, unrequired if you don't need methods from the main class
-	 
+	private Information plugin;
+	
     public Einfo(Information instance) {
         this.plugin = instance;
         

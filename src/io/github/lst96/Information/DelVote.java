@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class DelVote implements CommandExecutor {
-	List<String> list = new ArrayList();
+	List<String> list = new ArrayList<String>();
 	private Information plugin;
 	
 	public DelVote(Information instance) {
@@ -21,7 +21,7 @@ public class DelVote implements CommandExecutor {
 		if(commandLabel.equalsIgnoreCase("delvote"));
 		if ((sender.isOp()) || (sender.hasPermission("information.del.vote"))) {
 		if (args.length < 1) return false;
-		      List list = plugin.getConfig().getStringList("Vote");
+		      List<String> list = plugin.getConfig().getStringList("Vote");
 		      list.remove(combineSplit(args));
 		      plugin.getConfig().set("Vote", list);
 		      this.plugin.saveConfig();

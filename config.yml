@@ -1,5 +1,5 @@
-# Default Configuration generated with Information v1.1
-# To add more voting links just make a new line exactly like below example. 
+# Default Configuration generated with Information v1.3
+# To add more voting links just make a new line exactly like below example or do /setvote <message>.
 # '&4 http://dev.bukkit.org/bukkit-plugins/information/'
 # To add color codes just do '&' then a color code. For example '&4' appears as a red message.
 # For available color codes visit: http://www.minecraftwiki.net/wiki/Formatting_codes

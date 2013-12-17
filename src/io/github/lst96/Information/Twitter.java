@@ -7,7 +7,7 @@ import org.bukkit.ChatColor;
 
 public class Twitter implements CommandExecutor{
 	
-	private Information plugin; // pointer to your main class, unrequired if you don't need methods from the main class
+	private Information plugin;
 	 
     public Twitter(Information instance) {
         this.plugin = instance;

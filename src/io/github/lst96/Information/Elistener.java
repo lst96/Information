@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class Elistener implements Listener {
 
-    Information plugin;
+    private Information plugin;
 	
 	public Elistener(Information instance) {
         plugin = instance;

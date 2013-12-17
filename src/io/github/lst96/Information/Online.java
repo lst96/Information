@@ -8,11 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 public class Online implements CommandExecutor{
-	
-	private Information plugin; 
-	 
+	  
     public Online(Information instance) {
-        this.plugin = instance;
         
     }
     

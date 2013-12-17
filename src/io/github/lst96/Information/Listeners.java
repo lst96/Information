@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class Listeners implements Listener {
 	
-	Information plugin;
+	private Information plugin;
 	
 	public Listeners(Information instance) {
 		plugin = instance;
@@ -19,8 +19,7 @@ public class Listeners implements Listener {
 	  if(event.getPlayer().isOp() && plugin.isUpdate)
 	  {
 		  event.getPlayer().sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RESET + ChatColor.RED + " An update is available: " + plugin.updater.getLatestVersionString());
-		  event.getPlayer().sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RESET + ChatColor.RED + " Download update at http://dev.bukkit.org/server-mods/information/files/13-information-v1-2/");
+		  event.getPlayer().sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RESET + ChatColor.RED + " Download update at http://dev.bukkit.org/server-mods/information/files/15-information-v1-4/");
 	  }
 	}
-
 }

@@ -31,7 +31,6 @@ public class Information extends JavaPlugin {
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
 		getConfig().options().copyDefaults(true);
 	    saveConfig();
-	    Runtime runtime = Runtime.getRuntime();
 	    System.gc();
 	    try {
 	      Metrics metrics = new Metrics(this);
@@ -63,7 +62,7 @@ public class Information extends JavaPlugin {
 		if(autoUpdate) {
 			setupUpdater();
 		String mcVersion = Bukkit.getBukkitVersion();
-	    this.compatible = mcVersion.startsWith("1.6.2");
+	    this.compatible = mcVersion.startsWith("1.7.2");
 	    if ((this.getConfig().getBoolean("check_bukkit_compatibility")) && (!this.compatible)) {
 	      this.logger.info("[Information] is not compatible with " + Bukkit.getVersion());
 	      getServer().getPluginManager().disablePlugin(this);
@@ -98,5 +97,5 @@ public class Information extends JavaPlugin {
             default:
             	break;
         }
-	}	
+	}
 }

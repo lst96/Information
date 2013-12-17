@@ -13,11 +13,8 @@ import org.bukkit.entity.Player;
 public class PlayerInfo
   implements CommandExecutor
 {
-  public Information plugin;
 
-  public PlayerInfo(Information instance)
-  {
-    this.plugin = instance;
+  public PlayerInfo(Information instance){
   }
 
   public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
