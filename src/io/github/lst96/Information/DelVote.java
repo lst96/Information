@@ -27,10 +27,10 @@ public class DelVote implements CommandExecutor {
 		      this.plugin.saveConfig();
 		      sender.sendMessage(ChatColor.DARK_GREEN + "Deleted Message!");
 		      return true;
-		    }
-		    return false;
-		  }
-
+		}
+			sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+			return true;
+		}
 		  public String combineSplit(String[] string) {
 		    StringBuilder builder = new StringBuilder();
 
