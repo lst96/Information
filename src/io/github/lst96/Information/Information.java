@@ -56,7 +56,6 @@ public class Information extends JavaPlugin {
 		getCommand("stats").setExecutor(new Stats(this));
 		getCommand("setvote").setExecutor(new SetVote(this));
 		getCommand("delvote").setExecutor(new DelVote(this));
-		getCommand("viewvote").setExecutor(new ViewVote(this));
 		messages = this.getConfig().getBoolean("messages");
 		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
 		if(autoUpdate) {

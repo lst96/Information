@@ -57,9 +57,6 @@ commands:
   DelVote:
       description: Deletes voting links.
       aliases: [infodelvote]
-  ViewVote:
-      description: Views currently set voting links.
-      aliases: [infoviewvote]
 permissions:
     information.*:
         description: Gives access to all information commands
@@ -81,7 +78,6 @@ permissions:
             information.stats: true
             inforamtion.setvote: true
             information.delvote: true
-            information.viewvote: true
     information.member:
         description: Gives access to member commands
         children:
@@ -101,7 +97,6 @@ permissions:
             information.stats: false
             information.setvote: false
             information.delvote: false
-            information.viewvote: true
     information.admin:
         description: Gives access to admin commands
         children:
@@ -122,7 +117,6 @@ permissions:
             information.stats: true
             information.setvote: true
             information.delvote: true
-            information.viewvote: true
     information.website:
         description: Allows use of website command.
     information.donate:
@@ -159,6 +153,4 @@ permissions:
        description: Allows use of setvote command.
     information.delvote:
        description: Allows use of delvote command.
-    information.viewvote:
-       description: Allows use of viewvote command.
     

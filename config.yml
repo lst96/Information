@@ -1,20 +1,28 @@
 # Default Configuration generated with Information v1.3
-# To add more voting links just make a new line exactly like below example or do /setvote <message>.
-# '&4 http://dev.bukkit.org/bukkit-plugins/information/'
+# Website, Donate, Rules, Staff, ServerIP, Twitter, Facebook, Youtube, Extra, and Vote supports color and unlimited messages.
 # To add color codes just do '&' then a color code. For example '&4' appears as a red message.
 # For available color codes visit: http://www.minecraftwiki.net/wiki/Formatting_codes
 
-Website: ''
-Donate: ''
-Rules: ''
-Staff: ''
-ServerIp: ''
-Twitter: ''
-Facebook: ''
-Youtube: ''
-Extra: ''
+Website:
+- '&1 Website'
+Donate:
+- '&2 Donate'
+Rules:
+- '&3 Rules'
+Staff:
+- '&4 Staff'
+ServerIp: 
+- '&5 ServerIp'
+Twitter:
+- '&6 Twitter'
+Facebook: 
+- '&7 Facebook'
+Youtube:
+- '&8 Youtube'
+Extra:
+- '&9 Extra'
+Vote:
+- '&a Vote'
 autoupdate-check: true
 messages: true
 check_bukkit_compatibility: false
-Vote:
-- '&4 http://dev.bukkit.org/bukkit-plugins/information/'

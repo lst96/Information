@@ -23,6 +23,7 @@ public class Vote implements CommandExecutor{
     		if ((sender.isOp()) || (sender.hasPermission("information.vote"))) {
     		List<?> Vote = plugin.getConfig().getStringList("Vote");
     		String Vote1;
+    		sender.sendMessage(ChatColor.DARK_BLUE + "--Current Voting Link(s)--");
     		for (Iterator<?> iterator = Vote.iterator(); iterator.hasNext(); sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Vote1)))
                 Vote1 = (String)iterator.next();
     				return true;
