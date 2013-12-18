@@ -1,7 +1,7 @@
 package io.github.lst96.Information;
 
 import java.util.logging.Logger;
-import net.h31ix.updater.Updater;
+import net.gravitydevelopment.updater.Updater;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,8 +13,6 @@ public class Information extends JavaPlugin {
 	public final Logger logger = Logger.getLogger("Minecraft");
 	public PluginDescriptionFile pdfFile;
 	public String PREFIX;
-	public boolean isUpdate = false;
-	public boolean messages = false;
 	public boolean autoUpdate = false;
 	Updater updater;
 	private boolean compatible;
@@ -26,7 +24,6 @@ public class Information extends JavaPlugin {
 		PREFIX = "[" + pdfFile.getName() + "]";
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
 		new Elistener(this);
-		new Listeners(this);
 		this.logger.info(PREFIX + " Information version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
 		getConfig().options().copyDefaults(true);
@@ -56,8 +53,7 @@ public class Information extends JavaPlugin {
 		getCommand("stats").setExecutor(new Stats(this));
 		getCommand("setvote").setExecutor(new SetVote(this));
 		getCommand("delvote").setExecutor(new DelVote(this));
-		messages = this.getConfig().getBoolean("messages");
-		autoUpdate = this.getConfig().getBoolean("autoupdate-check");
+		autoUpdate = this.getConfig().getBoolean("autoupdate");
 		if(autoUpdate) {
 			setupUpdater();
 		String mcVersion = Bukkit.getBukkitVersion();
@@ -76,25 +72,36 @@ public class Information extends JavaPlugin {
 	
 	private void setupUpdater() {
 	
-		updater = new Updater(this, "information", this.getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
-        switch(updater.getResult())
+		Updater updater = new Updater(this, 57100, this.getFile(), Updater.UpdateType.DEFAULT, true);
+		Updater.UpdateResult result = updater.getResult();
+        switch(result)
         {
             case SUCCESS:
+                // Success: The updater found an update, and has readied it to be loaded the next time the server restarts/reloads
                 break;
             case NO_UPDATE:
+                // No Update: The updater did not find an update, and nothing was downloaded.
+                break;
+            case DISABLED:
+                // Won't Update: The updater was disabled in its configuration file.
                 break;
             case FAIL_DOWNLOAD:
+                // Download Failed: The updater found an update, but was unable to download it.
+                break;
             case FAIL_DBO:
+                // dev.bukkit.org Failed: For some reason, the updater was unable to contact DBO to download the file.
+                break;
             case FAIL_NOVERSION:
-            case FAIL_BADSLUG:
-            	this.logger.warning(PREFIX + " Updater Failed!");
+                // No version found: When running the version check, the file on DBO did not contain the a version in the format 'vVersion' such as 'v1.0'.
+                break;
+            case FAIL_BADID:
+                // Bad id: The id provided by the plugin running the updater was invalid and doesn't exist on DBO.
+                break;
+            case FAIL_APIKEY:
+                // Bad API key: The user provided an invalid API key for the updater to use.
                 break;
             case UPDATE_AVAILABLE:
-            	this.logger.info(PREFIX + " New version " + updater.getLatestVersionString() + " available!");
-            	isUpdate = true;
-            	break;
-            default:
-            	break;
+              // There was an update found, but because you had the UpdateType set to NO_DOWNLOAD, it was not downloaded.
         }
 	}
 }
