@@ -1,5 +1,8 @@
 package io.github.lst96.Information.Listeners;
 
+import java.util.Iterator;
+import java.util.List;
+
 import io.github.lst96.Information.Information;
 
 import org.bukkit.ChatColor;
@@ -18,11 +21,15 @@ public class Elistener implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		if (event.getPlayer().isOp()
-				|| (event.getPlayer().hasPermission("information.extra"))) {
-			event.getPlayer().sendMessage(
-					ChatColor.DARK_RED + "[Information]" + " " + ChatColor.AQUA
-							+ plugin.getConfig().getString("Extra"));
+		if ((event.getPlayer().isOp()) || (event.getPlayer().hasPermission("information.extra"))) {
+			List<?> Extra = plugin.getConfig().getStringList("Extra");
+			String Extra1;
+			event.getPlayer().sendMessage(ChatColor.DARK_BLUE + "--Extra(s)--");
+			for (Iterator<?> iterator = Extra.iterator(); iterator.hasNext(); event.getPlayer()
+					.sendMessage(ChatColor.translateAlternateColorCodes('&',
+							Extra1)))
+				Extra1 = (String) iterator.next();
+			return;
 		}
 	}
 }
