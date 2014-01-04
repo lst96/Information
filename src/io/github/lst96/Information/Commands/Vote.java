@@ -26,18 +26,12 @@ public class Vote implements CommandExecutor {
 		if ((sender.isOp()) || (sender.hasPermission("information.vote"))) {
 			List<?> Vote = plugin.getConfig().getStringList("Vote");
 			String Vote1;
-			sender.sendMessage(ChatColor.DARK_BLUE
-					+ "--Current Voting Link(s)--");
-			for (Iterator<?> iterator = Vote.iterator(); iterator.hasNext(); sender
-					.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Vote1)))
+			sender.sendMessage(ChatColor.DARK_BLUE + "--Current Voting Link(s)--");
+			for (Iterator<?> iterator = Vote.iterator(); iterator.hasNext(); sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Vote1)))
 				Vote1 = (String) iterator.next();
 			return true;
 		}
-		sender.sendMessage(ChatColor.DARK_RED
-				+ "[Information]"
-				+ ChatColor.RED
-				+ "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
 		return true;
 	}
 }

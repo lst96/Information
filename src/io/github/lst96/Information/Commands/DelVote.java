@@ -18,10 +18,8 @@ public class DelVote implements CommandExecutor {
 		this.plugin = instance;
 	}
 
-	public boolean onCommand(CommandSender sender, Command cmd,
-			String commandLabel, String[] args) {
-		if (commandLabel.equalsIgnoreCase("delvote"))
-			;
+	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+		if (commandLabel.equalsIgnoreCase("delvote"));
 		if ((sender.isOp()) || (sender.hasPermission("information.del.vote"))) {
 			if (args.length < 1)
 				return false;
@@ -32,10 +30,7 @@ public class DelVote implements CommandExecutor {
 			sender.sendMessage(ChatColor.DARK_GREEN + "Deleted Message!");
 			return true;
 		}
-		sender.sendMessage(ChatColor.DARK_RED
-				+ "[Information]"
-				+ ChatColor.RED
-				+ "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		sender.sendMessage(ChatColor.DARK_RED + "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
 		return true;
 	}
 

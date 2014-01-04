@@ -44,11 +44,9 @@ public class Information extends JavaPlugin {
 	public void onEnable() {
 		pdfFile = this.getDescription();
 		PREFIX = "[" + pdfFile.getName() + "]";
-		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(),
-				100L, 1L);
+		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Tps(), 100L, 1L);
 		getServer().getPluginManager().registerEvents(new Elistener(this), this);
-		this.logger.info(PREFIX + " Information version "
-				+ pdfFile.getVersion() + " has been enabled.");
+		this.logger.info(PREFIX + " Information version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
 		getConfig().options().copyDefaults(true);
 		saveConfig();
@@ -83,8 +81,7 @@ public class Information extends JavaPlugin {
 			this.compatible = mcVersion.startsWith("1.7.2");
 			if ((this.getConfig().getBoolean("check_bukkit_compatibility"))
 					&& (!this.compatible)) {
-				this.logger.info("[Information] is not compatible with "
-						+ Bukkit.getVersion());
+				this.logger.info("[Information] is not compatible with " + Bukkit.getVersion());
 				getServer().getPluginManager().disablePlugin(this);
 				return;
 			}

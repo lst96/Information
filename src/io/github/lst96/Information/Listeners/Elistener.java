@@ -25,9 +25,7 @@ public class Elistener implements Listener {
 			List<?> Extra = plugin.getConfig().getStringList("Extra");
 			String Extra1;
 			event.getPlayer().sendMessage(ChatColor.DARK_BLUE + "--Extra(s)--");
-			for (Iterator<?> iterator = Extra.iterator(); iterator.hasNext(); event.getPlayer()
-					.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Extra1)))
+			for (Iterator<?> iterator = Extra.iterator(); iterator.hasNext(); event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', Extra1)))
 				Extra1 = (String) iterator.next();
 			return;
 		}

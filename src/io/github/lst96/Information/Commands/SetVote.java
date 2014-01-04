@@ -18,10 +18,8 @@ public class SetVote implements CommandExecutor {
 		this.plugin = instance;
 	}
 
-	public boolean onCommand(CommandSender sender, Command cmd,
-			String commandLabel, String[] args) {
-		if (commandLabel.equalsIgnoreCase("setvote"))
-			;
+	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+		if (commandLabel.equalsIgnoreCase("setvote"));
 		if ((sender.isOp()) || (sender.hasPermission("information.set.vote"))) {
 			if (args.length < 1)
 				return false;
@@ -32,10 +30,7 @@ public class SetVote implements CommandExecutor {
 			sender.sendMessage(ChatColor.DARK_GREEN + "Saved Message!");
 			return true;
 		}
-		sender.sendMessage(ChatColor.DARK_RED
-				+ "[Information]"
-				+ ChatColor.RED
-				+ "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
+		sender.sendMessage(ChatColor.DARK_RED+ "[Information]" + ChatColor.RED + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.");
 		return true;
 	}
 
