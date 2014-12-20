@@ -1,5 +1,5 @@
 name: Information
-version: 1.4
+version: 2.0
 author: lst96
 main: io.github.lst96.Information.Information
 commands:
@@ -57,6 +57,15 @@ commands:
   DelVote:
       description: Deletes voting links.
       aliases: [infodelvote]
+  Infoupdate:
+      description: Manually check for update.
+      aliases: []
+  Enchantall:
+      description: Enchants an item fully.
+      aliases: []
+  Uuid:
+      description: Gets a player's UUID.
+      aliases: []
 permissions:
     information.*:
         description: Gives access to all information commands
@@ -76,8 +85,21 @@ permissions:
             information.extra: true
             information.youtube: true
             information.stats: true
-            inforamtion.setvote: true
+            information.setvote: true
             information.delvote: true
+            information.update: true
+            information.flightbypass.world: true
+            information.flightbypass.nether: true
+            information.flightbypass.end: true
+            information.creativebypass.world: true
+            information.creativebypass.nether: true
+            information.creativebypass.end: true
+            information.joinbypass.world: true
+            information.joinbypass.nether: true
+            information.joinbypass.end: true
+            information.uuid: true
+            information.netherbuild.notify: true
+            information.netherbuildbypass: true
     information.member:
         description: Gives access to member commands
         children:
@@ -97,6 +119,19 @@ permissions:
             information.stats: false
             information.setvote: false
             information.delvote: false
+            information.update: false
+            information.flightbypass.world: false
+            information.flightbypass.nether: false
+            information.flightbypass.end: false
+            information.creativebypass.world: false
+            information.creativebypass.nether: false
+            information.creativebypass.end: false
+            information.joinbypass.world: false
+            information.joinbypass.nether: false
+            information.joinbypass.end: false
+            information.uuid: false
+            information.netherbuild.notify: true    
+            information.netherbuildbypass: false      
     information.admin:
         description: Gives access to admin commands
         children:
@@ -117,4 +152,16 @@ permissions:
             information.stats: true
             information.setvote: true
             information.delvote: true
-    
+            information.update: true
+            information.flightbypass.world: true
+            information.flightbypass.nether: true
+            information.flightbypass.end: true
+            information.creativebypass.world: true
+            information.creativebypass.nether: true
+            information.creativebypass.end: true
+            information.joinbypass.world: true
+            information.joinbypass.nether: true
+            information.joinbypass.end: true
+            information.uuid: true
+            information.netherbuild.notify: true     
+            information.netherbuildbypass: true      

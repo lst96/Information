@@ -1,4 +1,4 @@
-# Default Configuration generated with Information v1.4
+# Default Configuration generated with Information v2.0
 # Website, Donate, Rules, Staff, ServerIP, Twitter, Facebook, Youtube, Extra, and Vote supports color and unlimited messages.
 # To add color codes just do '&' then a color code. For example '&4' appears as a red message.
 # For available color codes visit: http://www.minecraftwiki.net/wiki/Formatting_codes
@@ -23,5 +23,18 @@ Extra:
 - '&9 Extra'
 Vote:
 - '&a Vote'
+Disabled Flight Worlds:
+  world: false
+  world_nether: false
+  world_the_end: false
+Disabled Creative Worlds:
+  world: false
+  world_nether: false
+  world_the_end: false
+Disabled Join Worlds:
+  world: false
+  world_nether: false
+  world_the_end: false
+Blocktopofnetherbuilding: true
 autoupdate: true
 check_bukkit_compatibility: false

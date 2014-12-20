@@ -19,7 +19,7 @@ public class PlayerInfo implements CommandExecutor {
 				if(args.length != 1) {
 					sender.sendMessage(ChatColor.RED + "Incorrect usage! Correct usage /player <playername>.");
 					return false;
-				}				
+				}
 	    	Player targetplayer = Bukkit.getServer().getPlayer(args[0]);
 			if (targetplayer == null) {
 				sender.sendMessage(ChatColor.DARK_RED + args[0] + ChatColor.RED + " is currently not online.");
